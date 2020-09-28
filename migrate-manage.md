@@ -33,4 +33,4 @@ As you proceed to make changes to any component in your VPC, the changes are ref
 ## Next steps
 {: #manage-next-steps}
 
-Refer to [Provisioning your resources in VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-edit-resources).
+Refer to [Provisioning your resources in VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-provision).
