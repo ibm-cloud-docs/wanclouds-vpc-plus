@@ -1,0 +1,31 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="wanclouds-vpc-plus" category="compute,network,storage" audience="platform" href="/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-getting-started-tutorial" path="wanclouds-vpc-plus"}
+VPC+ Cloud Migration
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    about-wanclouds.md
+    planning.md
+    /transit-gateway/transit-gateway-helpful-tips
+    /vpc/vpc-quotas
+    migration-considerations-wanclouds.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    migrate-discovery.md
+    migrate-manage.md
+    migrate-provision.md
+    migrate-validate.md
+    migrating-vsi-existing-vpc.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    high-availability-disaster-recovery.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faq.md
+    wc_ts_index.md
+    {: .navgroup-end}
