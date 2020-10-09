@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="wanclouds-vpc-plus" category="compute,network,storage" audience="platform" href="/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-getting-started-tutorial" path="wanclouds-vpc-plus"}
+{: .toc subcollection="wanclouds-vpc-plus" category="compute,network,storage,migration_tools" audience="platform" href="/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-getting-started-tutorial" path="wanclouds-vpc-plus"}
 VPC+ Cloud Migration
 
     {: .navgroup id="learn"}
