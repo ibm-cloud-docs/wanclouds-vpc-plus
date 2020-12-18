@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-12-15"
 
 keywords:
 
@@ -34,10 +34,12 @@ Virtual server instances must use one of the following operating systems:
 * Red Hat 7.x
 * Ubuntu Linux 18.04 Bionic Beaver
 * Ubuntu Linux 16.04 Xenial Xerus
+* Windows 2012, 2012R2, 2016
 
 If you have virtual servers that are not using one of the supported operating systems, you need to migrate them to a supported level before migration.
 
-Virtual servers must be cloud-init enabled and have Virtio drivers. For Linux images that do not meet this criteria, see [Creating a Linux custom image](/docs/vpc?topic=vpc-create-linux-custom-image) to prepare the image.
+Virtual servers must be cloud-init enabled and have Virtio drivers. For Linux images that do not meet this criteria, see [Creating a Linux custom image](/docs/vpc?topic=vpc-create-linux-custom-image) to prepare the image. For Windows images that do not meet this criteria, see [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-image). As an option, you can run a script to validate if your Linux or Windows image meets the minimum OS requirements, is cloud-init enabled, and has Virtio drivers. For script details, visit https://github.com/IBM/vpc-migration. 
+{: important}
 
 Additionally, virtual servers must meet the following requirements:
 * No add-ons
@@ -61,6 +63,18 @@ If the VPC+ tool encounters a profile during discovery that doesn't match a supp
 
 {{site.data.keyword.vpc-plus-migration}} does not currently support GPU profiles.
 {: note}
+
+### Instance groups for auto scaling
+{: #auto-scale}
+
+The VPC+ tool discovers virtual server instances that are associated with instance groups. You can migrate these instances with the VPC+ tool, but the tool does not set up auto scale policies in VPC. It's recommended that you migrate only one virtual server instance that is associated with an instance group and then set up auto scale policies with that virtual server instance. For more information, see [Creating an instance group for auto scaling](/docs/vpc?topic=vpc-creating-auto-scale-instance-group).
+
+## Considerations for attached, block, and file storage
+{: #storage}
+
+The VPC+ tool can discover the three types of storage used by virtual server instances: attached, block, and file storage; however, the VPC+ tool can only migrate attached storage as part of the virtual server migration. 
+
+If the virtual server instance that you want to migrate has block and file storage volumes, then the data on the block or file volumes needs to be migrated to VPC by your tool of choice (scp, rsync, or other third-party tools).
 
 ## Considerations for SSH keys
 {: #ssh-keys}
