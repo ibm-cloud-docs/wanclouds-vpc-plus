@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-15"
+  years: 2020, 2021
+lastupdated: "2020-03-29"
 
 keywords:
 
@@ -38,7 +38,7 @@ Virtual server instances must use one of the following operating systems:
 
 If you have virtual servers that are not using one of the supported operating systems, you need to migrate them to a supported level before migration.
 
-Virtual servers must be cloud-init enabled and have Virtio drivers. For Linux images that do not meet this criteria, see [Creating a Linux custom image](/docs/vpc?topic=vpc-create-linux-custom-image) to prepare the image. For Windows images that do not meet this criteria, see [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-image). As an option, you can run a script to validate if your Linux or Windows image meets the minimum OS requirements, is cloud-init enabled, and has Virtio drivers. For script details, visit https://github.com/IBM/vpc-migration. 
+Virtual servers must be cloud-init enabled and have Virtio drivers. For Linux images that do not meet this criteria, see [Creating a Linux custom image](/docs/vpc?topic=vpc-create-linux-custom-image) to prepare the image. For Windows images that do not meet this criteria, see [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-image). As an option, you can run a script to validate if your Linux or Windows image meets the minimum OS requirements, is cloud-init enabled, and has Virtio drivers. For more information, see the [script details](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/os-precheck-scripts){: external}. 
 {: important}
 
 Additionally, virtual servers must meet the following requirements:
@@ -49,6 +49,19 @@ Additionally, virtual servers must meet the following requirements:
 
 The {{site.data.keyword.vpc-plus-migration}} tool does not log in to your virtual server instances nor does it have access to them. {{site.data.keyword.vpc-plus-migration}}, which is managed by Wanclouds, follows industry best practices to ensure that their application tool is secure and protects your sensitive information.
 {: note}
+
+### VMDK image conversion
+{: #vmdk-image-conversion}
+
+You can migrate a VMDK-formatted image from classic to VPC by using the VPC+ tool. The VPC+ tool converts the VMDK image to qcow2, which is the supported format in VPC. The image must meet the image requirements listed in the [Considerations for virtual server instances](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migration-considerations#virtual-server-instances) section:
+
+* Supported operating system
+* Cloud-init enabled
+* Virtio drivers
+* Single vHDD (no secondary) and does not exceed 100 GB
+
+If you decide to use the VPC+ tool to convert and migrate your VMDK image, you must export the image to {{site.data.keyword.cos_full_notm}} before you begin using the tool. For more information, see [Upload data](/docs/cloud-object-storage?topic=cloud-object-storage-upload).
+{: important}
 
 ### Dedicated virtual servers
 {: #dedicated-virtual-servers}
@@ -72,9 +85,14 @@ The VPC+ tool discovers virtual server instances that are associated with instan
 ## Considerations for attached, block, and file storage
 {: #storage}
 
-The VPC+ tool can discover the three types of storage used by virtual server instances: attached, block, and file storage; however, the VPC+ tool can only migrate attached storage as part of the virtual server migration. 
+The VPC+ tool can discover the three types of storage used by virtual server instances: attached, block, and file storage; however, the VPC+ tool can only migrate attached storage as part of the virtual server migration (snapshot). 
 
-If the virtual server instance that you want to migrate has block and file storage volumes, then the data on the block or file volumes needs to be migrated to VPC by your tool of choice (scp, rsync, or other third-party tools).
+If the virtual server instance that you want to migrate has block and file storage volumes, you can use the _Content Data Migrator_ in the VPC+ tool to migrate the storage; however, you need to consider the following limitations:
+
+  * Shared volumes are not supported. If you want to maintain shared volumes, then you will need to set up NFS file share on the target machine so you can manage the shared volumes. 
+  * Replication is not supported on VPC. 
+
+As an alternative to the _Content Data Migrator_, you can migrate the data on the block or file volumes to VPC by yourself by using `rsync` or other tools of your choice (`scp` or other third-party tools). For more information on using `rsync` to migrate your data, see [Migrating data from {{site.data.keyword.cloud_notm}} classic infrastructure to VPC](/docs/cloud-infrastructure?topic=cloud-infrastructure-data-migration-classic-to-vpc).
 
 ## Considerations for SSH keys
 {: #ssh-keys}
