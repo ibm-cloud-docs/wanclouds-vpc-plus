@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-30"
 
 keywords:
 
@@ -63,7 +63,7 @@ You can migrate a VMDK-formatted image from classic to VPC by using the VPC+ too
 If you decide to use the VPC+ tool to convert and migrate your VMDK image, you must export the image to {{site.data.keyword.cos_full_notm}} before you begin using the tool. For more information, see [Upload data](/docs/cloud-object-storage?topic=cloud-object-storage-upload).
 {: important}
 
-As an alternative, you can convert your VMDK image to qcow2 and upload to {{site.data.keyword.cos_short}} yourself. For more information, see [Migrating VMware (VMDK) images to VPC](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-vmware-vmdk-images-to-vpc).
+As an alternative, you can convert your VMDK image to qcow2 and upload to {{site.data.keyword.cos_short}} yourself. For more information, see [Migrating VMDK or VHD images to VPC](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vpc).
 
 ### Dedicated virtual servers
 {: #dedicated-virtual-servers}
