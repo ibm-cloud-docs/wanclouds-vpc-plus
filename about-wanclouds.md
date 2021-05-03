@@ -26,7 +26,7 @@ subcollection: wanclouds-vpc-plus
 ## What is {{site.data.keyword.vpc-plus-migration}}?
 {: #what-is-vpc-migration}
 
-{{site.data.keyword.vpc-plus-migration}} is a third-party, software-based migration-as-a-service solution for migrating components from {{site.data.keyword.cloud}} classic infrastructure to your {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC). {{site.data.keyword.vpc-plus-migration}} allows you to discover and choose resources for migration, create, and set up those resources in your VPC environment. You can also run and manage your VPC environment from within the tool.
+{{site.data.keyword.vpc-plus-migration}} is a third-party, software-based migration-as-a-service solution for migrating components from {{site.data.keyword.cloud}} classic infrastructure to your {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC). {{site.data.keyword.vpc-plus-migration}} allows you to discover and choose resources for migration, and create and set up those resources in your VPC environment. You can also run and manage your VPC environment from within the tool.
 {:shortdesc}
 
 {{site.data.keyword.vpc-plus-migration}}, which is managed by Wanclouds, follows industry best practices to ensure that their application tool is secure and protects your sensitive information.
