@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-06-01"
 
 keywords:
 
@@ -29,11 +29,10 @@ The {{site.data.keyword.vpc-plus-migration}} tool duplicates your environment on
 {: #virtual-server-instances}
 
 Virtual server instances must use one of the following operating systems:
-* CentOS 7.x
-* Debian 9.x
-* Red Hat 7.x
-* Ubuntu Linux 18.04 Bionic Beaver
-* Ubuntu Linux 16.04 Xenial Xerus
+* CentOS 7.x, 8.x
+* Debian 9.x, 10.x
+* Red Hat 7.x, 8.x
+* Ubuntu Linux 16.04.x, 18.04.x
 * Windows 2012, 2012R2, 2016
 
 If you have virtual servers that are not using one of the supported operating systems, you need to migrate them to a supported level before migration.
