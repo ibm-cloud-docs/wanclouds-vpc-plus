@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-06-28"
 
 keywords:
 
@@ -64,10 +64,12 @@ If you decide to use the VPC+ tool to convert and migrate your VMDK image, you m
 
 As an alternative, you can convert your VMDK image to qcow2 and upload to {{site.data.keyword.cos_short}} yourself. For more information, see [Migrating VMDK or VHD images to VPC](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vpc).
 
-### Dedicated virtual servers
-{: #dedicated-virtual-servers}
+### Dedicated hosts
+{: #dedicated-hosts}
 
-Virtual servers in VPC are all IBM-managed, multi-tenant virtual server deployments, similar to public virtual servers in classic. In VPC, there is not an equivalent to dedicated virtual servers. During migration, all dedicated virtual servers in your classic environment are migrated, but do not have the characteristics of a dedicated virtual server.
+When migrating a classic virtual server instance from a dedicated host to {{site.data.keyword.vpc_short}}, you have the option to continue to migrate it as a single-tenant model (dedicated host) or change to a shared-tenant model (public). The default is a single-tenant model, and the VPC+ tool will try to match to the closest classic profile that VPC offers for both the dedicated host and virtual server instance. You have the option to change the profile for either the dedicated host or virtual server instance.
+
+When you decide on classic virtual server placement, you can choose either manual (dedicated host) or auto-assign. Whereas in {{site.data.keyword.vpc_short}}, the implementation is slightly different and placement is either to a dedicated host or dedicated host group. If the placement for the classic virtual server instance is manual, then the VPC+ tools honors the placement and provisions the virtual server in {{site.data.keyword.vpc_short}} as such. For auto-assign, due to the different implementation, the server gets auto-assigned within a dedicated host group. For more information, see [Creating dedicated hosts and groups](/docs/vpc?topic=vpc-creating-dedicated-hosts-instances). Similarly, as with profiles, you have the option to change the virtual server placement and dedicated host group.
 
 ### Supported virtual server profiles
 {: #profiles}
@@ -83,18 +85,61 @@ If the VPC+ tool encounters a profile during discovery that doesn't match a supp
 
 The VPC+ tool discovers virtual server instances that are associated with instance groups. You can migrate these instances with the VPC+ tool, but the tool does not set up auto scale policies in VPC. It's recommended that you migrate only one virtual server instance that is associated with an instance group and then set up auto scale policies with that virtual server instance. For more information, see [Creating an instance group for auto scaling](/docs/vpc?topic=vpc-creating-auto-scale-instance-group).
 
-## Considerations for attached, block, and file storage
+## Data storage considerations for attached, block, and file storage
 {: #storage}
 
-The VPC+ tool can discover the three types of storage used by virtual server instances: attached, block, and file storage; however, the VPC+ tool can only migrate attached storage as part of the virtual server migration (snapshot). 
+The VPC+ tool can discover the three types of storage used by virtual server instances in {{site.data.keyword.cloud_notm}} classic infrastructure:
 
-If the virtual server instance that you want to migrate has block and file storage volumes, you can use the _Content Data Migrator_ in the VPC+ tool to migrate the storage; however, you need to consider the following limitations:
+1. Portable storage
+2. Network file storage
+3. Network-attached block storage (iSCSI) with file systems 
 
-  * Shared volumes are not supported. If you want to maintain shared volumes, then you will need to set up NFS file share on the target machine so you can manage the shared volumes. 
-  * Replication is not supported on VPC. 
+With VPC+ tool, you have the option to choose which data volumes to migrate. Only the volumes that you select will be migrated. 
+
+If you have a virtual server instance that has already been migrated where you want to migrate secondary data volumes, use the _Content Data Migrator_ in the VPC+ tool.
 
 As an alternative to the _Content Data Migrator_, you can migrate the data on the block or file volumes to VPC by yourself by using `rsync` or other tools of your choice (`scp` or other third-party tools). For more information on using `rsync` to migrate your data, see [Migrating data from {{site.data.keyword.cloud_notm}} classic infrastructure to VPC](/docs/cloud-infrastructure?topic=cloud-infrastructure-data-migration-classic-to-vpc).
+{: note}
 
+### Prerequisites for storage migration
+{: #prerequisites-storage-migration}
+
+To migrate block and NAS storages to VPC along with the virtual server instance, make sure to review and complete the following prerequisites:
+
+1. Your {{site.data.keyword.cloud_notm}} account should have administrator privileges for both classic and VPC. Storage volumes are created for the account provided within the VPC.
+2. You need to download the script that is provided by the VPC+ tool and run it on your classic virtual server instance with the required privileges. Instructions are provided in the script. The script installs the content migration agent that collects the necessary metadata that is needed for migration. The content migration agent collects information on attached storage, for example, name, partition information for block devices, mount points, file system types. The agent uploads the metadata to the VPC+ controller, providing an option later in the tool to select the wanted volumes for migration. For this to happen, your virtual server needs external connectivity to upload metadata files to the VPC+ controller.
+3. In the {{site.data.keyword.cloud_notm}} console, navigate to **Menu icon ![Menu icon](../icons/icon_hamburger.svg) > Classic Infrastructure > Devices > your virtual server instance**. Select the _Storage_ tab, and authorize your block and file storage if not listed there.
+
+### Limitations
+{: #storage- migration-limitations}
+
+Review the following storage migration limitations: 
+
+* All migrations are limited to a volume size of 2 TB only.
+* You can choose only four volumes while provisioning a virtual server instance. Only four attached volumes, in addition to your boot volume, can be migrated. If you have more than four volumes in your classic instance, see [Volume attachment limits](/docs/vpc?topic=vpc-attaching-block-storage#vol-attach-limits) for details and use the _Content Data Migrator_ in the VPC+ tool to migrate the additional volumes.
+* Up to four primary partitions or three primary with two logical on the fourth partition can be migrated.
+* Migration of block volumes and partitions without file systems is not yet supported.
+* A maximum of 10 IOPS/Gb mapping will be done on virtual server instances for VPC.
+* Migration of storage attached to Windows is not yet supported.
+
+All three storage types can be migrated if your use case satisfies these limitations.
+{: note}
+
+### Storage migration use cases
+{: #storage-migration-use-cases}
+
+Consider the following uses cases for storage migration: 
+
+1. Classic virtual server instance has portable storage that is attached with Linux file systems. This is migrated as-is to VPC.
+2. Classic virtual server instance has network file storage:
+  * An equivalent Linux file system (ext4) is created in VPC and then the contents are copied over.
+  * VPC does not yet support NAS storage. Your storage will be on the Linux file system on your VPC instance, and it cannot be shared.
+3. Classic virtual server has network block storage (iSCSI devices):
+  * The content migration agent will discover the existence of a Linux file system on top of dev mapper devices and will migrate the contents to VPC.
+  * Partition information between source and destination will be retained. 
+  * File systems on top of the iSCSI luns are copied to the destination instance. Neither multi-pathing nor user-friendly names configured on your source will be available.
+  in your destination.
+4. Classic virtual instance has portable storage, network file storage, and network block storage. 
 ## Considerations for SSH keys
 {: #ssh-keys}
 
