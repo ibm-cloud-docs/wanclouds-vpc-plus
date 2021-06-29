@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-08-31"
+  years: 2020, 2021
+lastupdated: "2021-06-29"
 
 keywords:
 
@@ -38,6 +38,7 @@ You can migrate the following key elements of {{site.data.keyword.cloud_notm}} c
 
 * Subnets
 * Virtual server instances
+* Dedicated hosts
 * Storage volumes (primary and secondary)
 * Security groups
 * Load balancers
