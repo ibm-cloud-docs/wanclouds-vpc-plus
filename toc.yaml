@@ -1,0 +1,40 @@
+toc: 
+  properties:
+    subcollection: wanclouds-vpc-plus
+    category: migration_tools
+    audience: platform
+    href: /docs/wanclouds-vpc-plus
+    console-page: /catalog/services/vpc-cloud-migration
+    path: wanclouds-vpc-plus
+    label: VPC+ Cloud Migration
+  entries:  
+  - navgroup: 
+      id: learn
+      topics:
+      - getting-started.md
+      - about-wanclouds.md
+      - planning.md
+      - link:
+          label: Planning for IBM Cloud Transit Gateway
+          href: /transit-gateway/transit-gateway-helpful-tips
+      - link:
+          label: Quotas and service limits
+          href: /vpc/vpc-quotas 
+      - migration-considerations-wanclouds.md
+  - navgroup: 
+      id: howto
+      topics:
+      - migrate-discovery.md 
+      - migrate-manage.md
+      - migrate-provision.md
+      - migrate-validate.md
+      - migrating-vsi-existing-vpc.md
+  - navgroup:
+      id: reference
+      topics:
+      - high-availability-disaster-recovery.md
+  - navgroup:
+      id: help
+      topics: 
+      - faq.md
+      - wc_ts_index.md 
