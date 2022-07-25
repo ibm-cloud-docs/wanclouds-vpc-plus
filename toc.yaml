@@ -29,6 +29,7 @@ toc:
       - migrate-provision.md
       - migrate-validate.md
       - migrating-vsi-existing-vpc.md
+      - migrating-iks-cluster.md
   - navgroup:
       id: reference
       topics:
