@@ -18,6 +18,7 @@ subcollection: wanclouds-vpc-plus
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:experimental: .experimental}
 {:table: .aria-labeledby="caption"}
 
 # Migration considerations
