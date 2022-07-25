@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-06-28"
+  years: 2020, 2022
+lastupdated: "2022-07-25"
 
 keywords:
 
@@ -199,3 +199,32 @@ If you have host-based rules /32, consider moving to security groups to preserve
 ## Gateway configurations not available in VPC
 {: #gateway-configurations-not-available-in-vpc}
 If your {{site.data.keyword.cloud_notm}} classic environment uses configurations in a gateway that are not available in VPC, {{site.data.keyword.vpc-plus-migration}} sets the closest match to what is available for VPC or uses a default configuration.
+
+## Considerations for IBM Cloud Kubernetes Service and Red Hat OpenShift migration
+{: #kubernetes-migration}
+
+This is an experimental feature that is available for evaluation and testing purposes and might change without notice. There are no warranties, SLAs, or support provided, and experimental features are not intended for production use.
+{: experimental}
+
+With the VPC+ tool, you can discover and migrate your {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_full}} cluster from classic to {{site.data.keyword.vpc_short}}. The VPC+ tool identifies all of your clusters and creates a workspace to help you manage your migration. You decide which cluster you want to migrate. 
+
+You can migrate the following versions:
+* {{site.data.keyword.containerlong_notm}} version 1.21+
+* {{site.data.keyword.redhat_openshift_notm}} version 4.6+
+
+You can only migrate from a single data center to a single availability zone or multiple data centers to a multi-zone region.
+{: note}
+
+The open source tools Velero and Restic are installed in their unique namespace by VPC+ to back up and migrate your {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_notm}} resources and components such as cluster-level resources, worker pools, PODs, namespaces, secrets, stateful sets, daemon sets, replica sets, jobs, cron jobs, and persistent volumes.
+
+You need to create an {{site.data.keyword.cos_full_notm}} service credential with a manager service role and HMAC. A temporary {{site.data.keyword.cos_short}} bucket is created in your account to assist with the migration. In addition, subnet gateways are to all {{site.data.keyword.containerlong_notm}} subnets.
+{: note}
+
+### Limitations
+{: #kubernetes-limitations}
+
+Review the following limitations for {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_notm}} migration:
+
+- Ingress resources and services are your responsibility.
+- Only block volumes are supported.
+- Velero requires 1 CPU and 500 MB for each node. In some cases, migration might fail due to hardware capacity. In these cases, scaling down resource consumption is required, such as disabling logging, monitoring, or applications.
