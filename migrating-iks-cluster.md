@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-08-05"
 
 keywords:
 
@@ -73,6 +73,6 @@ Review the following limitations:
     * {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_notm}} cluster name - The cluster name must be a new and unique.
     * Worker nodes - Classic worker pool flavors are not supported in VPC. 
 7. After you select the appropriate resources and components, you can migrate your cluster to VPC. 
-8. Validate and verify.
+8. After you migrate your clusters, verify and validate the clusters. You might need to do some fixes or redeployments on the migrated clusters, especially for {{site.data.keyword.redhat_openshift_notm}} clusters if you are using tooling specific to {{site.data.keyword.redhat_openshift_notm}}, such as internal image registry or operators.
 
 
