@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-08-11"
 
 keywords:
 
@@ -74,6 +74,7 @@ When you decide on classic virtual server placement, you can choose either manua
 
 ### Supported virtual server profiles
 {: #profiles}
+
 Not all compute profiles are supported in VPC. For example, quadratic profiles such as C1.2x2, C1.4x4, C1.8x8 are not supported. See [VPC profiles](/docs/vpc?topic=vpc-profiles#compute) for a full list of supported profiles.
 
 If the VPC+ tool encounters a profile during discovery that doesn't match a supported profile, the closest matching profile is selected. You can change the selection when editing the discovered resources.
@@ -195,16 +196,18 @@ If you have host-based rules /32, consider moving to security groups to preserve
 
 ### VRA rule limitations
 {: #VRA-rule-limitations}
+
 {{site.data.keyword.cloud_notm}} limits VRA rules to 25. If you have more than 25 rules, {{site.data.keyword.cloud_notm}} selects the first 25. You can manage these rules when editing your discovered resources.
 
 ## Gateway configurations not available in VPC
 {: #gateway-configurations-not-available-in-vpc}
+
 If your {{site.data.keyword.cloud_notm}} classic environment uses configurations in a gateway that are not available in VPC, {{site.data.keyword.vpc-plus-migration}} sets the closest match to what is available for VPC or uses a default configuration.
 
 ## Considerations for IBM Cloud Kubernetes Service and Red Hat OpenShift migration
 {: #kubernetes-migration}
 
-This is an experimental feature that is available for evaluation and testing purposes and might change without notice. There are no warranties, SLAs, or support provided, and experimental features are not intended for production use.
+Migrating multiple data centers to a multi-zone region is an experimental feature that is available for evaluation and testing purposes and might change without notice. There are no warranties, SLAs, or support provided, and experimental features are not intended for production use.
 {: experimental}
 
 With the VPC+ tool, you can discover and migrate your {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_full}} cluster from classic to {{site.data.keyword.vpc_short}}. The VPC+ tool identifies all of your clusters and creates a workspace to help you manage your migration. You decide which cluster you want to migrate. 

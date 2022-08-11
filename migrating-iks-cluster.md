@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-08-05"
+lastupdated: "2022-08-11"
 
 keywords:
 
@@ -23,7 +23,7 @@ subcollection: wanclouds-vpc-plus
 # Migrating classic IBM Cloud Kubernetes Service or Red Hat OpenShift cluster to VPC
 {: #migrate-classic-kubernetes-red-hat-openshift-cluster}
 
-This is an experimental feature that is available for evaluation and testing purposes and might change without notice. There are no warranties, SLAs, or support provided, and experimental features are not intended for production use.
+Migrating multiple data centers to a multi-zone region is an experimental feature that is available for evaluation and testing purposes and might change without notice. There are no warranties, SLAs, or support provided, and experimental features are not intended for production use.
 {: experimental}
 
 You can migrate your classic {{site.data.keyword.containerlong}} or {{site.data.keyword.redhat_openshift_full}} cluster to VPC by using the VPC+ tool for clusters that are deployed in a single data center. VPC+ discovers both the classic and {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_notm}} resources and components. Along with the other resources and workloads running within Kubernetes, see the following list for some of the components and resources that are discovered:
