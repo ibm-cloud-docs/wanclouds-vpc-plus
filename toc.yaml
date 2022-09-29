@@ -14,12 +14,8 @@ toc:
       - getting-started.md
       - about-wanclouds.md
       - planning.md
-      - link:
-          label: Planning for IBM Cloud Transit Gateway
-          href: /transit-gateway/transit-gateway-helpful-tips
-      - link:
-          label: Quotas and service limits
-          href: /vpc/vpc-quotas 
+      - /transit-gateway/transit-gateway-helpful-tips
+      - /vpc/vpc-quotas 
       - migration-considerations-wanclouds.md
   - navgroup: 
       id: howto
