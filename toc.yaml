@@ -17,6 +17,7 @@ toc:
       - /transit-gateway/transit-gateway-helpful-tips
       - /vpc/vpc-quotas 
       - migration-considerations-wanclouds.md
+      - release-notes.md
   - navgroup: 
       id: howto
       topics:
