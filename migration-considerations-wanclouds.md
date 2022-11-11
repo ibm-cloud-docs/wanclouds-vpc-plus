@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-11-11"
 
 keywords:
 
@@ -206,9 +206,6 @@ If your {{site.data.keyword.cloud_notm}} classic environment uses configurations
 
 ## Considerations for IBM Cloud Kubernetes Service and Red Hat OpenShift migration
 {: #kubernetes-migration}
-
-Migrating multiple data centers to a multi-zone region is an experimental feature that is available for evaluation and testing purposes and might change without notice. There are no warranties, SLAs, or support provided, and experimental features are not intended for production use.
-{: experimental}
 
 With the VPC+ tool, you can discover and migrate your {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_full}} cluster from classic to {{site.data.keyword.vpc_short}}. The VPC+ tool identifies all of your clusters and creates a workspace to help you manage your migration. You decide which cluster you want to migrate. 
 

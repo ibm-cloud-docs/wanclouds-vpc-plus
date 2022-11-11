@@ -3,7 +3,7 @@
 copyright:
   years: 2022
 
-lastupdated: "2022-10-03"
+lastupdated: "2022-11-11"
 
 keywords: 
 
@@ -22,6 +22,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.vpc-plus-migration}} that are grouped by date.
 {: shortdesc}
+
+## November 2022
+{: #vpc-plus-migration-nov22}
+{: release-note}
+
+Multizone region (MZR) - {{site.data.keyword.containerfull_notm}} and {{site.data.keyword.redhat_openshift_notm}} migration (GA)
+:   The ability to discover and migrate your {{site.data.keyword.containerfull_notm}} or {{site.data.keyword.redhat_openshift_notm}} clusters from multiple data centers to a multizone region (MZR) in VPC is now generally available.
 
 ## September 2022
 {: #vpc-plus-migration-sept22}
