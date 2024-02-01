@@ -14,8 +14,6 @@ toc:
       - getting-started.md
       - about-wanclouds.md
       - planning.md
-      - /transit-gateway/transit-gateway-helpful-tips
-      - /vpc/vpc-quotas 
       - migration-considerations-wanclouds.md
       - release-notes.md
   - navgroup: 
