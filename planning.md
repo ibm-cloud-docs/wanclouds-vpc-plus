@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-27"
+lastupdated: "2022-02-02"
 
 keywords:
 
@@ -24,7 +24,7 @@ subcollection: wanclouds-vpc-plus
 {: #planning-for-migration}
 
 To get the best results from your VPC migration, spend time analyzing your classic environment and learning how the VPC+ tool will handle different components of your environment. Use the following information to start planning your migration journey.
-{: shortdesc}
+{:shortdesc}
 
 ## Preparing for differences in classic and VPC environments
 {: #review-tasks}
@@ -50,9 +50,9 @@ To get the best results from your VPC migration, spend time analyzing your class
 {: #gather-account-information}
 
 | Account information | Details |
-| --- | --- |
+| --- | --- | 
 | Username | Create a username specifically for {{site.data.keyword.vpc-plus-migration}}. In the {{site.data.keyword.cloud_notm}} console, select **Manage > Access (IAM) > Users.** Select **Users** and then click **Invite user**, supplying the email address name of the user. This allows you to delete the username after your migration is complete. For more information, see [Inviting users to an account](/docs/account?topic=account-iamuserinv). |
-| API keys | You need a classic infrastructure API key. You will also need to create an  {{site.data.keyword.cloud_notm}} API key (VPC API key) specifically for {{site.data.keyword.vpc-plus-migration}}. Your {{site.data.keyword.cloud_notm}} API key must have “Reader, Writer” access. You can verify the level of access in {{site.data.keyword.cloud_notm}} console by clicking **Manage > Access (IAM)** and selecting **Authorizations**. For more information, see [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys) and [Managing user API keys](/docs/account?topic=account-userapikey). |
+| API keys | You need a classic infrastructure API key. You will also need to create an  {{site.data.keyword.cloud_notm}} API key (VPC API key) specifically for {{site.data.keyword.vpc-plus-migration}}. Your {{site.data.keyword.cloud_notm}} API key must have “Reader, Writer” access. You can verify the level of access in the {{site.data.keyword.cloud_notm}} console by clicking **Manage > Access (IAM)** and selecting **Authorizations**. For more information, see [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys) and [Managing user API keys](/docs/account?topic=account-userapikey). |
 | {{site.data.keyword.cos_full_notm}} and resource instance ID (service credentials)| Your {{site.data.keyword.cos_short}} bucket is used to store your images and volumes during the migration process and its resource instance ID allows {{site.data.keyword.vpc-plus-migration}} to access your {{site.data.keyword.cos_full_notm}} and import the images that you want to migrate. For more information, see [{{site.data.keyword.cos_full_notm}} getting started tutorial](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) and [Service credentials](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials). |
 | (Optional) VRA (Vyatta 5600) configuration file | If you want to migrate your Access Control Lists, VPN gateways, and public gateways, you need a VRA set command configuration file in `txt` format. JSON format is not supported. |
 {: caption="Table 3. Required {{site.data.keyword.cloud_notm}} account information" caption-side="top"}
@@ -78,7 +78,7 @@ The following table outlines the end-to-end process of your migration journey by
 | [Create an instance of {{site.data.keyword.vpc-plus-migration}} through the {{site.data.keyword.cloud_notm}} catalog](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-getting-started-tutorial#step-3-create) | Create an instance of {{site.data.keyword.vpc-plus-migration}} through the {{site.data.keyword.cloud_notm}} catalog so that you have access to the VPC+ tool. |
 | [Access the {{site.data.keyword.vpc-plus-migration}} tool](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-getting-started-tutorial#step-4-access) | Log in by using your IBMid. |
 | [Add your {{site.data.keyword.cloud_notm}} account to {{site.data.keyword.vpc-plus-migration}}](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-getting-started-tutorial#step-5-add-account) | In order for {{site.data.keyword.vpc-plus-migration}} to access details of your {{site.data.keyword.cloud_notm}} configuration, you must add your {{site.data.keyword.cloud_notm}} accounts information. |
-| [Discover your {{site.data.keyword.cloud_notm}} classic infrastructure](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-discovery) | After you add your {{site.data.keyword.cloud_notm}} accounts to {{site.data.keyword.vpc-plus-migration}}, the VPC+ tool can discover your classic infrastructure resources that can be migrated. |
+| [Discover your {{site.data.keyword.cloud_notm}} classic infrastructure](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-discovery) | After you add your {{site.data.keyword.cloud_notm}} accounts to {{site.data.keyword.vpc-plus-migration}}, the VPC+ tool can discover your classic infrastructure resources that can be migrated.
 | [Edit your discovered resources](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-edit-resources) | {{site.data.keyword.vpc-plus-migration}} creates a workspace after discovering your environment. In the workspace you can add, delete, or edit any section of your VPC. |
 | [Provision your resources in VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-provision) | You can either provision your entire VPC or select the components that you want to provision, allowing you to migrate the rest at a later time. |
 | [Validate your resources in VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-validate) | After you provision your VPC environment, and before you make your VPC live, you will want to validate your VPC environment to ensure it is ready for production. |

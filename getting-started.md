@@ -23,7 +23,7 @@ subcollection: wanclouds-vpc-plus
 {: #getting-started-tutorial}
 
 Use {{site.data.keyword.vpc-plus-migration}} to migrate your {{site.data.keyword.cloud}} classic infrastructure to {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC).
-{:shortdesc}
+{: shortdesc}
 
 ## Step 1. Learn more about {{site.data.keyword.vpc-plus-migration}}
 {: #step-1-learn}

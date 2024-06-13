@@ -53,7 +53,7 @@ The {{site.data.keyword.vpc-plus-migration}} tool does not log in to your virtua
 ### VMDK image conversion
 {: #vmdk-image-conversion}
 
-You can migrate a VMDK-formatted image from classic to VPC by using the VPC+ tool. The VPC+ tool converts the VMDK image to qcow2, which is the supported format in VPC. The image must meet the image requirements listed in the [Considerations for virtual server instances](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migration-considerations#virtual-server-instances) section:
+You can migrate a VMDK-formatted image from classic to VPC by using the VPC+ tool. The VPC+ tool converts the VMDK image to qcow2, which is the supported format in VPC. The image must meet the image requirements that are listed in the [Considerations for virtual server instances](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migration-considerations#virtual-server-instances) section:
 
 * Supported operating system
 * Cloud-init enabled
@@ -74,7 +74,6 @@ When you decide on classic virtual server placement, you can choose either manua
 
 ### Supported virtual server profiles
 {: #profiles}
-
 Not all compute profiles are supported in VPC. For example, quadratic profiles such as C1.2x2, C1.4x4, C1.8x8 are not supported. See [VPC profiles](/docs/vpc?topic=vpc-profiles#compute) for a full list of supported profiles.
 
 If the VPC+ tool encounters a profile during discovery that doesn't match a supported profile, the closest matching profile is selected. You can change the selection when editing the discovered resources.
@@ -142,6 +141,7 @@ Consider the following uses cases for storage migration:
   * File systems on top of the iSCSI luns are copied to the destination instance. Neither multi-pathing nor user-friendly names configured on your source will be available.
   in your destination.
 4. Classic virtual instance has portable storage, network file storage, and network block storage. 
+
 ## Considerations for SSH keys
 {: #ssh-keys}
 
@@ -182,7 +182,8 @@ Only VRA (Vyatta 5600) is supported. Within VRA, the following features are supp
 
 ### ACLs
 {: #ACLs}
-The VPC+ tool does not translate network or host-based ACL rules. You will need to add these rules when editing your discovered resources or after you provision your VPC environment.
+
+The VPC+ tool does not convert network or host-based ACL rules. You will need to add these rules when editing your discovered resources or after you provision your VPC environment.
 
 For port-based ACLs that are configured with RFC1918 a network address, the port ACLs are migrated but the address will change to `Any`. For example, the following VRA configuration:
 
@@ -229,3 +230,5 @@ Review the following limitations for {{site.data.keyword.containerlong_notm}} or
 - Ingress resources and services are your responsibility.
 - Only block volumes are supported.
 - Velero requires 1 CPU and 500 MB for each node. In some cases, migration might fail due to hardware capacity. In these cases, scaling down resource consumption is required, such as disabling logging, monitoring, or applications.
+
+
