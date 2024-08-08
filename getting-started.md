@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-09-22"
+  years: 2020, 2024
+lastupdated: "2024-08-08"
 
 keywords: migration, virtual servers migration, migrating to virtual private cloud
 
@@ -33,7 +33,7 @@ Before you begin migrating your classic infrastucture to VPC, learn more about {
 ## Step 2. Plan for your migration 
 {: #step-2-plan}
 
-To get the best results from your VPC migration, spend time analyzing your classic environment and learning how the {{site.data.keyword.vpc-plus-migration}} tool will handle different components of your environment. For more information, see [Planning for migration](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-planning-for-migration).
+To get the best results from your VPC migration, spend time analyzing your classic environment and learning how the {{site.data.keyword.vpc-plus-migration}} tool handles different components of your environment. For more information, see [Planning for migration](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-planning-for-migration).
 
 ## Step 3. Create an instance of {{site.data.keyword.vpc-plus-migration}} through the {{site.data.keyword.cloud_notm}} catalog
 {: #step-3-create}
