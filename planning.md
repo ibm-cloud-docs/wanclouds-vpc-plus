@@ -35,7 +35,7 @@ To get the best results from your VPC migration, spend time analyzing your class
 | Review [migration considerations](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migration-considerations) | Review information about specific infrastructure components. |
 | Review [comparisons between infrastructure environments](/docs/cloud-infrastructure?topic=cloud-infrastructure-compare-infrastructure) | Some components of your classic infrastructure might not exist in VPC such as dedicated virtual servers, available server profiles, and IPv6 addressing. |
 | Review [VPC pricing](https://www.ibm.com/cloud/vpc/pricing){: external} | Pricing might vary between {{site.data.keyword.cloud_notm}} classic and VPC infrastructures. |
-{: caption="Table 1. Review tasks" caption-side="top"}
+{: caption="Review tasks" caption-side="top"}
 
 ## Granting permissions and access
 {: #grant-permissions-and-access}
@@ -44,7 +44,7 @@ To get the best results from your VPC migration, spend time analyzing your class
 | --- | --- |
 | Permissions for classic and VPC | Contact your account administrator for permissions. |
 | Grant access between VPC Image Services and {{site.data.keyword.cos_full_notm}} | Grant this access if you want to migrate your primary boot volume, secondary volumes, and images from classic infrastructure. For more information, see [Granting access between services](/docs/vpc?topic=vpc-object-storage-prereq). |
-{: caption="Table 2. Permissions and access tasks" caption-side="top"}
+{: caption="Permissions and access tasks" caption-side="top"}
 
 ## Gathering {{site.data.keyword.cloud_notm}} account information
 {: #gather-account-information}
@@ -55,7 +55,7 @@ To get the best results from your VPC migration, spend time analyzing your class
 | API keys | You need a classic infrastructure API key. You will also need to create an  {{site.data.keyword.cloud_notm}} API key (VPC API key) specifically for {{site.data.keyword.vpc-plus-migration}}. Your {{site.data.keyword.cloud_notm}} API key must have “Reader, Writer” access. You can verify the level of access in the {{site.data.keyword.cloud_notm}} console by clicking **Manage > Access (IAM)** and selecting **Authorizations**. For more information, see [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys) and [Managing user API keys](/docs/account?topic=account-userapikey). |
 | {{site.data.keyword.cos_full_notm}} and resource instance ID (service credentials)| Your {{site.data.keyword.cos_short}} bucket is used to store your images and volumes during the migration process and its resource instance ID allows {{site.data.keyword.vpc-plus-migration}} to access your {{site.data.keyword.cos_full_notm}} and import the images that you want to migrate. For more information, see [{{site.data.keyword.cos_full_notm}} getting started tutorial](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) and [Service credentials](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials). |
 | (Optional) VRA (Vyatta 5600) configuration file | If you want to migrate your Access Control Lists, VPN gateways, and public gateways, you need a VRA set command configuration file in `txt` format. JSON format is not supported. |
-{: caption="Table 3. Required {{site.data.keyword.cloud_notm}} account information" caption-side="top"}
+{: caption="Required {{site.data.keyword.cloud_notm}} account information" caption-side="top"}
 
 ## Establishing connection between classic and VPC
 {: #establish-connection-classic-vpc}
@@ -83,7 +83,7 @@ The following table outlines the end-to-end process of your migration journey by
 | [Provision your resources in VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-provision) | You can either provision your entire VPC or select the components that you want to provision, allowing you to migrate the rest at a later time. |
 | [Validate your resources in VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-validate) | After you provision your VPC environment, and before you make your VPC live, you will want to validate your VPC environment to ensure it is ready for production. |
 | (Optional) Create a transit gateway | If you want to establish a connection between your VPC and classic infrastructure, you can create a transit gateway. Refer to [Establishing connection between classic and VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-planning-for-migration#establish-connection-classic-vpc). |
-{: caption="Table 4. Migration process overview" caption-side="top"}
+{: caption="Migration process overview" caption-side="top"}
 
 ## Next steps
 {: #planning-next-steps}
