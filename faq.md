@@ -21,7 +21,7 @@ subcollection: wanclouds-vpc-plus
 {:faq: data-hd-content-type='faq'}
 
 
-# FAQs for VPC+ Cloud Migration
+# FAQs for VPC+
 {: #wanclouds-vpc-plus-faqs}
 
 FAQs for {{site.data.keyword.vpc-plus-migration}} includes questions about {{site.data.keyword.cloud}} migration. To find all FAQs for {{site.data.keyword.cloud_notm}}, see our [FAQ library](/docs/faqs).
@@ -38,12 +38,12 @@ Because your virtual server instances are restarted when {{site.data.keyword.vpc
 {: faq}
 Do not delete any resources from your {{site.data.keyword.cloud_notm}} environment during the migration process, such as {{site.data.keyword.cos_full_notm}} and image templates.
 
-## Will migrating IBM Cloud classic environment to IBM Cloud VPC incur more charges?
+## Will migrating {{site.data.keyword.cloud_notm}} classic environment to {{site.data.keyword.cloud_notm}} VPC incur more charges?
 {: #my-faq-costs}
 {: faq}
 Pricing might change depending upon your environment, and you are billed according to the {{site.data.keyword.vpc_short}} pricing plan. Also, your VPC environment is charged separately from your classic environment. Migration will not automatically de-provision your existing environment. If you do not want to maintain both accounts, you can de-provision it from {{site.data.keyword.cloud_notm}}.
 
-## Can I access my current IBM Cloud classic environment if I migrate to VPC?
+## Can I access my current {{site.data.keyword.cloud_notm}} classic environment if I migrate to VPC?
 {: #my-faq-access-classic}
 {: faq}
 Yes, you can establish a link to your existing {{site.data.keyword.cloud_notm}} classic infrastructure when you migrate to VPC. The migration will not disrupt anything from your existing environment.

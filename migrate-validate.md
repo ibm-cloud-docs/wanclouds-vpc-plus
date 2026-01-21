@@ -58,11 +58,11 @@ Validate operating system configurations.
 ## Next steps
 {: #validate-next-steps}
 
-1. As a security best practice, when you are finished using {{site.data.keyword.vpc-plus-migration}}, delete the username and API key that you created specifically for VPC+. For more information, see [Deleting an API key](/docs/account?topic=account-userapikey#delete_user_key) and [Removing users from an account](/docs/account?topic=account-remove).
+1. As a security best practice, when you are finished using {{site.data.keyword.vpc-plus-migration}}, delete the username and API key that you created specifically for {{site.data.keyword.vpc-plus-migration}}. For more information, see [Deleting an API key](/docs/account?topic=account-userapikey#delete_user_key) and [Removing users from an account](/docs/account?topic=account-remove).
 
 2. You need a plan for making VPC live. This includes tasks such as:
   * Updating your DNS server
   * If your data syncs between classic and VPC, you will need to resync after provision.
   * {{site.data.keyword.vpc-plus-migration}} does not shut down or delete any of the resources that were been migrated to VPC. So, you will have two active environments. You will need to close the resources in your classic environment.
   * Moving any traffic that is currently active in classic to VPC.
-  * If your instance has a public interface, you need to manually attach a floating IP in VPC. The VPC+ tool does not do this for you.
+  * If your instance has a public interface, you need to manually attach a floating IP in VPC. The {{site.data.keyword.vpc-plus-migration}} tool does not do this for you.

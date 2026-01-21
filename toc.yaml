@@ -6,7 +6,7 @@ toc:
     href: /docs/wanclouds-vpc-plus
     console-page: /catalog/services/vpc-cloud-migration
     path: wanclouds-vpc-plus
-    label: VPC+ Cloud Migration
+    label: VPC+
   entries:  
   - navgroup: 
       id: learn

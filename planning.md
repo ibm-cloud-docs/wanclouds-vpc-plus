@@ -23,7 +23,7 @@ subcollection: wanclouds-vpc-plus
 # Planning for migration
 {: #planning-for-migration}
 
-To get the best results from your VPC migration, spend time analyzing your classic environment and learning how the VPC+ tool will handle different components of your environment. Use the following information to start planning your migration journey.
+To get the best results from your VPC migration, spend time analyzing your classic environment and learning how the {{site.data.keyword.vpc-plus-migration}} tool will handle different components of your environment. Use the following information to start planning your migration journey.
 {:shortdesc}
 
 ## Preparing for differences in classic and VPC environments
@@ -60,7 +60,7 @@ To get the best results from your VPC migration, spend time analyzing your class
 ## Establishing connection between classic and VPC
 {: #establish-connection-classic-vpc}
 
-In some cases, resources in VPC still might need to access resources back in classic, such as databases or interprocess communication. In these cases, creating a transit gateway provides a bridge between the two environments. The VPC+ tool can help create the transit gateway, or you can create it through the {{site.data.keyword.cloud_notm}}. If you want to learn more, see [About {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-about).
+In some cases, resources in VPC still might need to access resources back in classic, such as databases or interprocess communication. In these cases, creating a transit gateway provides a bridge between the two environments. The {{site.data.keyword.vpc-plus-migration}} tool can help create the transit gateway, or you can create it through the {{site.data.keyword.cloud_notm}}. If you want to learn more, see [About {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-about).
 
 Review the [Planning for {{site.data.keyword.tg_full_notm}}](/docs/wanclouds-vpc-plus?topic=transit-gateway-helpful-tips) information if you want to establish a connection between your VPC and classic infrastructure.
 
@@ -75,10 +75,10 @@ The following table outlines the end-to-end process of your migration journey by
 
 | Migration task | Details |
 | --- | --- |
-| [Create an instance of {{site.data.keyword.vpc-plus-migration}} through the {{site.data.keyword.cloud_notm}} catalog](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-getting-started-tutorial#step-3-create) | Create an instance of {{site.data.keyword.vpc-plus-migration}} through the {{site.data.keyword.cloud_notm}} catalog so that you have access to the VPC+ tool. |
+| [Create an instance of {{site.data.keyword.vpc-plus-migration}} through the {{site.data.keyword.cloud_notm}} catalog](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-getting-started-tutorial#step-3-create) | Create an instance of {{site.data.keyword.vpc-plus-migration}} through the {{site.data.keyword.cloud_notm}} catalog so that you have access to the {{site.data.keyword.vpc-plus-migration}} tool. |
 | [Access the {{site.data.keyword.vpc-plus-migration}} tool](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-getting-started-tutorial#step-4-access) | Log in by using your IBMid. |
 | [Add your {{site.data.keyword.cloud_notm}} account to {{site.data.keyword.vpc-plus-migration}}](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-getting-started-tutorial#step-5-add-account) | In order for {{site.data.keyword.vpc-plus-migration}} to access details of your {{site.data.keyword.cloud_notm}} configuration, you must add your {{site.data.keyword.cloud_notm}} accounts information. |
-| [Discover your {{site.data.keyword.cloud_notm}} classic infrastructure](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-discovery) | After you add your {{site.data.keyword.cloud_notm}} accounts to {{site.data.keyword.vpc-plus-migration}}, the VPC+ tool can discover your classic infrastructure resources that can be migrated.
+| [Discover your {{site.data.keyword.cloud_notm}} classic infrastructure](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-discovery) | After you add your {{site.data.keyword.cloud_notm}} accounts to {{site.data.keyword.vpc-plus-migration}}, the {{site.data.keyword.vpc-plus-migration}} tool can discover your classic infrastructure resources that can be migrated.
 | [Edit your discovered resources](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-edit-resources) | {{site.data.keyword.vpc-plus-migration}} creates a workspace after discovering your environment. In the workspace you can add, delete, or edit any section of your VPC. |
 | [Provision your resources in VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-provision) | You can either provision your entire VPC or select the components that you want to provision, allowing you to migrate the rest at a later time. |
 | [Validate your resources in VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-validate) | After you provision your VPC environment, and before you make your VPC live, you will want to validate your VPC environment to ensure it is ready for production. |
