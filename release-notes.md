@@ -17,7 +17,7 @@ content-type: release-note
 {:external: target="_blank" .external}
 {:release-note: data-hd-content-type='release-note'}
 
-# Release notes for VPC+ Cloud Migration
+# Release notes for {{site.data.keyword.vpc-plus-migration}}
 {: #release-notes}
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.vpc-plus-migration}} that are grouped by date.
@@ -35,13 +35,13 @@ Multizone region (MZR) - {{site.data.keyword.containerfull_notm}} and {{site.dat
 {: release-note}
 
 Placement groups
-:   You can now migrate placement groups with attached virtual server instances to {{site.data.keyword.vpc_short}} by using the VPC+ tool.
+:   You can now migrate placement groups with attached virtual server instances to {{site.data.keyword.vpc_short}} by using the {{site.data.keyword.vpc-plus-migration}} tool.
 
 Single availability zone (SAZ) - {{site.data.keyword.containerfull_notm}} and {{site.data.keyword.redhat_openshift_notm}} migration (GA)
 :   The ability to migrate your {{site.data.keyword.containerfull_notm}} and {{site.data.keyword.redhat_openshift_notm}} clusters from a single data center to a single availability zone in VPC is now generally available. For more information, see [Migrating classic {{site.data.keyword.containerfull_notm}} or {{site.data.keyword.redhat_openshift_notm}} to VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-classic-kubernetes-red-hat-openshift-cluster).
 
 Support for multiple {{site.data.keyword.containerfull_notm}} or {{site.data.keyword.redhat_openshift_notm}} cluster migrations
-:   You can now migrate multiple {{site.data.keyword.containerfull_notm}} or {{site.data.keyword.redhat_openshift_notm}} clusters at the same time with the VPC+ tool.
+:   You can now migrate multiple {{site.data.keyword.containerfull_notm}} or {{site.data.keyword.redhat_openshift_notm}} clusters at the same time with the {{site.data.keyword.vpc-plus-migration}} tool.
 
 ## June 2022
 {: #vpc-plus-migration-jun22}
@@ -65,14 +65,14 @@ Dedicated hosts
 :   When you migrate a classic virtual server instance from a dedicated host to {{site.data.keyword.vpc_short}}, you now have the option to continue to migrate it as a single-tenant model (dedicated host) or change it to a shared-tenant model (public). For more information, see [Dedicated hosts](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migration-considerations#dedicated-hosts).
 
 Data migration for block and file storage
-:   You can now migrate classic block and file storage to {{site.data.keyword.vpc_short}} with the VPC+ tool. For more information, see [Data storage considerations for attached, block, and file storage](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migration-considerations#storage).
+:   You can now migrate classic block and file storage to {{site.data.keyword.vpc_short}} with the {{site.data.keyword.vpc-plus-migration}} tool. For more information, see [Data storage considerations for attached, block, and file storage](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migration-considerations#storage).
 
 ## March 2021
 {: #vpc-plus-migration-mar21}
 {: release-note}
 
 VMDK image conversion
-:   You can now migrate a VMDK-formatted image from {{site.data.keyword.cloud_notm}} classic infrastructure to {{site.data.keyword.vpc_short}} by using the VPC+ tool. For more information, see [VMDK image conversion](docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migration-considerations#vmdk-image-conversion).
+:   You can now migrate a VMDK-formatted image from {{site.data.keyword.cloud_notm}} classic infrastructure to {{site.data.keyword.vpc_short}} by using the {{site.data.keyword.vpc-plus-migration}} tool. For more information, see [VMDK image conversion](docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migration-considerations#vmdk-image-conversion).
 
 ## December 2020
 {: #vpc-plus-migration-dec20}
@@ -92,16 +92,16 @@ Bug fix
 {: release-note}
 
 Manage existing VPC 
-:   You can now create or delete resources in an existing VPC from the VPC+ tool. For more information, see [Migrating a virtual server instance to an existing VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-vsi-existing-vpc).
+:   You can now create or delete resources in an existing VPC from the {{site.data.keyword.vpc-plus-migration}} tool. For more information, see [Migrating a virtual server instance to an existing VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-migrate-vsi-existing-vpc).
 
 Create instance from image template or qcow2 image 
-:   You can create a virtual server instance from an image template or qcow2 image that is stored in {{site.data.keyword.cos_full_notm}} from the VPC+ tool.
+:   You can create a virtual server instance from an image template or qcow2 image that is stored in {{site.data.keyword.cos_full_notm}} from the {{site.data.keyword.vpc-plus-migration}} tool.
 
 {{site.data.keyword.tg_full_notm}}
-:   With the VPC+ tool, you can now create a transit gateway between your classic and VPC environments. For more information, see [Establishing connection between classic and VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-planning-for-migration#establish-connection-classic-vpc).
+:   With the {{site.data.keyword.vpc-plus-migration}} tool, you can now create a transit gateway between your classic and VPC environments. For more information, see [Establishing connection between classic and VPC](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-planning-for-migration#establish-connection-classic-vpc).
 
 SSO with existing {{site.data.keyword.cloud_notm}} account
-:   You can now sign in to the VPC+ tool with your existing {{site.data.keyword.cloud_notm}} account credentials.
+:   You can now sign in to the {{site.data.keyword.vpc-plus-migration}} tool with your existing {{site.data.keyword.cloud_notm}} account credentials.
 
 ## June 2020
 {: #vpc-plus-migration-jun20}
@@ -109,4 +109,3 @@ SSO with existing {{site.data.keyword.cloud_notm}} account
 
 Introducing {{site.data.keyword.vpc-plus-migration}}
 :   You can now use {{site.data.keyword.vpc-plus-migration}} to migrate your {{site.data.keyword.cloud_notm}} classic infrastructure to {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC). For more information, see [About {{site.data.keyword.vpc-plus-migration}}](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-about-wanclouds).
-

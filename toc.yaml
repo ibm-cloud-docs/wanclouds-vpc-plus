@@ -1,4 +1,4 @@
-toc: 
+toc:
   properties:
     subcollection: wanclouds-vpc-plus
     category: migration_tools
@@ -6,9 +6,9 @@ toc:
     href: /docs/wanclouds-vpc-plus
     console-page: /catalog/services/vpc-cloud-migration
     path: wanclouds-vpc-plus
-    label: VPC+ Cloud Migration
-  entries:  
-  - navgroup: 
+    label: Wanclouds VPC+
+  entries:
+  - navgroup:
       id: learn
       topics:
       - getting-started.md
@@ -16,10 +16,10 @@ toc:
       - planning.md
       - migration-considerations-wanclouds.md
       - release-notes.md
-  - navgroup: 
+  - navgroup:
       id: howto
       topics:
-      - migrate-discovery.md 
+      - migrate-discovery.md
       - migrate-manage.md
       - migrate-provision.md
       - migrate-validate.md
@@ -31,6 +31,6 @@ toc:
       - high-availability-disaster-recovery.md
   - navgroup:
       id: help
-      topics: 
+      topics:
       - faq.md
-      - wc_ts_index.md 
+      - wc_ts_index.md

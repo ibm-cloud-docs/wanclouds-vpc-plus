@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "title": "Wanclouds VPC Plus Migration",
+  "introduction": "Wanclouds VPC Plus Migration is a third-party, software-based migration-as-a-service solution for migrating workloads and other related components from IBM Cloud classic infrastructure to IBM Cloud Virtual Private Cloud (VPC).",
+  "product_page": "https://www.ibm.com/products/cloud/migrate",
+  "section_topics": {
+    "links": [
+      {
+        "title": "About Wanclouds VPC Plus Migration",
+        "href": "/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-about-wanclouds"
+      },
+      {
+        "title": "Getting Started",
+        "href": "/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-getting-started-tutorial"
+      },
+      {
+        "title": "Planning for Migration",
+        "href": "/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-planning-for-migration"
+      }
+    ]
+  },
+  "section_highlights": [],
+  "section_architectures": [],
+  "section_updates": {
+    "view_more": "/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-release-notes",
+    "tiles": [
+      {
+        "date": "20 April 2026",
+        "title": "New capabilities and features in Wanclouds VPC Plus Migration"
+      },
+      {
+        "date": "08 August 2024",
+        "title": "Getting started with Wanclouds VPC Plus Migration"
+      },
+      {
+        "date": "20 May 2021",
+        "title": "About Wanclouds VPC Plus Migration"
+      }
+    ]
+  }
+}
