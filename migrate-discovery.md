@@ -24,12 +24,14 @@ subcollection: wanclouds-vpc-plus
 {: #migrate-discovery}
 
 The discovery tool in {{site.data.keyword.vpc-plus-migration}} uses account credentials that you provide and searches your existing {{site.data.keyword.cloud_notm}} classic infrastructure to determine what components you have and how they are configured. This includes components such as:
-* Address prefixes
 * Subnets
 * Virtual server instances
 * Load balancers
 * Security groups
 * SSH keys
+* Placement groups 
+* Dedicated host
+* k8 clusters
 
 Optionally, you can also specify a VRA (Vyatta 5600) configuration file to discover additional information, such as:
 
